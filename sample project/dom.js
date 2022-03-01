@@ -28,14 +28,14 @@
 //GETELEMENTSBYCLASSNAME
 var items = document.getElementsByClassName("list-group-item");
 console.log(items);
-items[1].textContent = "Hello2";
-items[1].style.fontWeight = "bold";
-items[1].style.backgroundColor = "yellow";
+items[3].textContent = "Hello2";
+items[3].style.fontWeight = "bold";
+items[3].style.backgroundColor = "green";
 
 //to give all the items a background color we can do looping
 
 for(var i=0; i<items.length; i++){
-    items[i].style.backgroundColor = "yellow";
+    items[i].style.backgroundColor = "green";
     items[i].style.fontWeight = "bold";
 }
 
