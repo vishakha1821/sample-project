@@ -7,19 +7,66 @@
     <title>Registration form</title>
 </head>
 <body>
-    <h1 Style="text-align: center;">Registration Form for Academic year 2022</h1>
-    <form class="form" action="backend.php">
-        Name: <input type="text"><br><br>
-        Roll no.:<input type="number"><br><br>
-        Date of birth: <input type="date"><br><br>
-        E-mail: <input type="email"><br><br>
-        Phone No.: <input type="number"><br><br>
-        <input type="submit">
-<script src="index.js"></script>
-
+    <h2>Registration form</h2>
+    <form  onsubmit="localStorage(event)" action="backend.php">
+        <label for="name">Name:</label>
+        <div>
+         <input type="text" name="username" id="name" required>
+    </div>
+    <br>
+    <label for="roll">Roll no.</label>
+    <div>
+         <input type="text" id="roll" name="Roll" required>
+    </div>
+    <br>
+    <label for="e-mail">e-mail</label>
+    <div>
+         <input type="email" id="e-mail" name="email" required>
+    </div>
+    <br>
+    <label for="mobile">Mobile</label>
+    <div>
+       <input type="number" id="mobile" name="number" required>
+    </div>
+    <br>
+    <label for="dob">Date of birth</label>
+    <div>
+         <input type="date" id="dob" name="dob" required>
+    </div>
+    <br>
+    <label for="gender">Gender</label>
+    <div>
+         Male<input type="radio"> Female <input type="radio" id="gender">
+    </div>
+    <br>
+    <div>
+        <input  type="submit" value="submit" id="btn">
+    </div><br>
+    <div>
+        <input type="reset" value="Reset">
+    </div><br>
+    <div>
+        Give a description about yourself: <br><textarea rows="10" cols="40"></textarea>
+    </div>
+    <br>
+    </form>
+<script>
+    function localStorage(event){
+        event.preventDefault();
+        const name = event.target.username.value;
+        const email = event.target.username.value;
+        const roll = event.target.roll.value;
+        const Phonenumber = event.target.number.value;
+        const dob = event.target.dob.value;
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('roll', roll);
+        localStorage.setItem('Phonenumber', number);
+        localStorage.setItem('dob', dob);
+    }
+</script>
+   
     </form>
 </body>
 </html>
 
-<li style="color: green;">Hello</li>
-<li style="color: yellow;">Hello</li>
