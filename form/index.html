@@ -16,17 +16,17 @@
     <br>
     <label for="roll">Roll no.</label>
     <div>
-         <input type="text" id="roll" name="Roll" required>
+         <input type="text" id="roll" name="roll" required>
     </div>
     <br>
     <label for="e-mail">e-mail</label>
     <div>
-         <input type="email" id="e-mail" name="email" required>
+         <input type="email" id="email" name="email" required>
     </div>
     <br>
-    <label for="mobile">Mobile</label>
+    <label for="Phonenumber">Mobile</label>
     <div>
-       <input type="number" id="mobile" name="number" required>
+       <input type="number" id="Phonenumber" name="Phonenumber" required>
     </div>
     <br>
     <label for="dob">Date of birth</label>
@@ -61,8 +61,18 @@
         localStorage.setItem('name', name);
         localStorage.setItem('email', email);
         localStorage.setItem('roll', roll);
-        localStorage.setItem('Phonenumber', number);
+        localStorage.setItem('Phonenumber', Phonenumber);
         localStorage.setItem('dob', dob);
+
+        const obj = {
+            name,
+            email,
+            roll,
+            Phonenumber,
+            dob
+
+        }
+        localStorage.setItem('UserDeatils', obj)
     }
 </script>
    
