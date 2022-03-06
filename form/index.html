@@ -67,6 +67,10 @@
 
         showNewUserOnScreen(obj);
 
+        if(localStorage.getItem(user.email)){
+            removeNewUser(email);
+        }
+
         const obj = {
             name,
             email,
@@ -80,9 +84,36 @@
 
         function showNewUserOnScreen(obj){
             const parentNode = document.getElementById('listOfUsers');
-            const childHTML = `<li>${user.name}  ${user.email}  ${user.Phonenumber}  ${user.dob}</li>`
+            const childHTML = `<li>${user.name}  ${user.email}  ${user.Phonenumber}  ${user.dob}
+             <button onClick = deleteUser('${user.name}' '${user.email}'  '${user.Phonenumber}' '${user.dob}')>Delete user</button>
+             <button onClick = editUser ('${user.name}' '${user.email}' '${user.Phonenumber}' '${user.dob}')Edit user details</button>
+                              </li>`
             parentNode.innerHTML = parentNode.innerHTML + childHTML;
         }
+
+        function deleteUser (name, email, Phonenumber, dob){
+            console.log(name, email, Phonenumber, dob);
+            localStorage.removeItem(name, email, Phonenumber, dob);
+            removeFromScreen(name, email, Phonenumber, dob);
+        }
+
+        function removeFromScreen(name, email, Phonenumber, dob){
+            const parentNode = getElementById('listOfUsers');
+            const childNodeToBeDeleted = document.getElementById(name, email, Phonenumber, dob);
+             parentNode.removeChild(childNodeToBeDeleted);
+
+        }
+
+        function editUserDeatils(name, email, Phonenumber, dob){
+            document.getElementById('name').value = name;
+            document.getElementById('email').value = email;
+            document.getElementById('Phonenumber').value = Phonenumber;
+            document.getElementById('dob').value = dob;
+        }
+
+        
+
+        function removeNewUser(email);
 
         localStorage.setItem(obj.name , JSON(obj));
         localStorage.setItem(obj.email , JSON(obj));
