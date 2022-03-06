@@ -49,6 +49,7 @@
         Give a description about yourself: <br><textarea rows="10" cols="40"></textarea>
     </div>
     <br>
+    <ul id="listOfUsers"></ul>
     </form>
 <script>
     function localStorage(event){
@@ -58,11 +59,13 @@
         const roll = event.target.roll.value;
         const Phonenumber = event.target.number.value;
         const dob = event.target.dob.value;
-        localStorage.setItem('name', name);
-        localStorage.setItem('email', email);
-        localStorage.setItem('roll', roll);
-        localStorage.setItem('Phonenumber', Phonenumber);
-        localStorage.setItem('dob', dob);
+       // localStorage.setItem('name', name);
+       // localStorage.setItem('email', email);
+        //localStorage.setItem('roll', roll);
+        //localStorage.setItem('Phonenumber', Phonenumber);
+        //localStorage.setItem('dob', dob);
+
+        showNewUserOnScreen(obj);
 
         const obj = {
             name,
@@ -71,8 +74,29 @@
             Phonenumber,
             dob
 
+            
+
         }
-        localStorage.setItem('UserDeatils', obj)
+
+        function showNewUserOnScreen(obj){
+            const parentNode = document.getElementById('listOfUsers');
+            const childHTML = `<li>${user.name}  ${user.email}  ${user.Phonenumber}  ${user.dob}</li>`
+            parentNode.innerHTML = parentNode.innerHTML + childHTML;
+        }
+
+        localStorage.setItem(obj.name , JSON(obj));
+        localStorage.setItem(obj.email , JSON(obj));
+        localStorage.setItem(obj.roll , JSON(obj));
+        localStorage.setItem(obj.Phonenumber , JSON(obj));
+        localStorage.setItem(obj.dob , JSON(obj));
+
+        JSON.parse(localStorage(name));
+        JSON.parse(localStorage(email));
+        JSON.parse(localStorage(roll));
+        JSON.parse(localStorage(Phonenumber));
+        JSON.parse(localStorage(dob));
+
+       
     }
 </script>
    
