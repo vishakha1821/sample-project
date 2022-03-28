@@ -55,3 +55,18 @@ let printDeatils2 = function(age, occupation){
  console.log(printAllDetails);
 
  printAllDetails(); 
+
+
+
+
+ let student = {
+     name : "Raj Rai",
+     age : 25,
+
+ }
+ let printAge = function(){
+    console.log(this.age); 
+ }
+
+ let printAllDetails3 = printAge.bind(obj);
+ 
