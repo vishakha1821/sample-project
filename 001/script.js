@@ -1,72 +1,15 @@
-//CALL : 
-
-let obj1 = {
-
-    name : "Vishakha",
-
+/*let multiply = function(x, y){
+    console.log(x*y);
 }
 
-let printName = function(){
+let multiplyByTwo = multiply.bind(this, 2);
+multiplyByTwo(5);*/
 
-    console.log(this.name);
-
+let multiply = function(x){
+    return function (y){
+        console.log(x*y);
+    }
 }
 
-printName.call(obj);
-
-//APPLY:
-
-
-
-let obj2 = {
-
-    fistName : "Raj",
-
-    lstName : "Rai",
-
-}
-
-let printDeatils1 = function(age, occupation){
-
-    console.log(this.fistName + " " + this.lstName + " " + age + "years old" + " "+ "occupied as an" +" "+ occupation);
-
-}
-
-printDeatils1.apply(obj, ["25", "engineer"]);
-
-//BIND:
-
-let obj3 = {
-
-    fistName : "Raj",
-
-    lstName : "Rai",
-
-}
-
-let printDeatils2 = function(age, occupation){
-
-    console.log(this.fistName + " " + this.lstName + " " + age + "years old" + " "+ "occupied as an" +" "+ occupation);
-
-}
-
- let printAllDetails = printDeatils2.bind(obj, "25", "engineer");
-
- console.log(printAllDetails);
-
- printAllDetails(); 
-
-
-
-
- let student = {
-     name : "Raj Rai",
-     age : 25,
-
- }
- let printAge = function(){
-    console.log(this.age); 
- }
-
- let printAllDetails3 = printAge.bind(obj);
- 
+let multiplyByTwo = multiply(2);
+multiplyByTwo(4);
